@@ -1,0 +1,10 @@
+/ak/
+/bin/
+/external-src/
+/include/
+/lib/
+/local/
+/share/
+
+/repo.yaml
+/pip-selfcheck.json
