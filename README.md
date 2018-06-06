@@ -1,5 +1,7 @@
-# Voodoo (buildout) project for shopinvader
+# Ak recipe for ShopInvader project 
 
-Clone it and launch
+Clone it
 
-```voodoo run```
+Define your repository as virtual environement
+
+Then go to https://github.com/akretion/ak/wiki
