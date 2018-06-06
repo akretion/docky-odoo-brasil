@@ -1,0 +1,72 @@
+
+./odoo:
+    modules: []
+    src: https://github.com/OCA/ocb 10.0
+
+./bank-payment:
+    modules: []
+    src: https://github.com/OCA/bank-payment 10.0
+
+./crm:
+    modules: []
+    src: https://github.com/OCA/crm 10.0
+
+./delivery-carrier:
+    modules: []
+    src: https://github.com/OCA/delivery-carrier 10.0
+
+./product-brand:
+    modules: []
+    src: https://github.com/OCA/product-attribute 10.0
+
+./product-variant:
+    modules: []
+    src: https://github.com/OCA/product-variant 10.0
+
+./queue:
+    modules: []
+    src: https://github.com/OCA/queue 10.0
+
+./sale-workflow:
+    modules: []
+    src: https://github.com/OCA/sale-workflow 10.0
+
+./ak-odoo-incubator:
+    modules: []
+    src: https://github.com/akretion/ak-odoo-incubator 10-base_jsonify
+
+./incubator-sparse-field-list:
+    modules: []
+    src: https://github.com/akretion/ak-odoo-incubator 10-base_sparse_field_list
+
+./connector-search-engine:
+    modules: []
+    src: https://github.com/akretion/connector-search-engine 10.0
+
+./odoo-shopinvader:
+    modules: []
+    src: https://github.com/akretion/odoo-shopinvader 10.0
+
+./payment-gateway:
+    modules: []
+    src: https://github.com/akretion/payment-gateway 10-adyen
+
+./product-attribute-mig-attr:
+    modules: []
+    src: https://github.com/akretion/product-attribute 10-migr-custom-attributes
+
+./server-tools:
+    modules: []
+    src: https://github.com/akretion/server-tools 10.0-improve-onchange-helper
+
+./server-tools-mig-attr:
+    modules: []
+    src: https://github.com/akretion/server-tools 10-migr-custom-attributes
+
+./storage:
+    modules: []
+    src: https://github.com/akretion/storage 10.0
+
+./connector:
+    modules: []
+    src: https://github.com/oca/connector 10.0
