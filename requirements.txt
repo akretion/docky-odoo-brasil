@@ -17,6 +17,7 @@ querystring_parser
 pyquerystring
 parse-accept-language
 adyen
+unittest2
 
 pillow == 3.4.2
 fs == 0.5.5a1
