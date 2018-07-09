@@ -1,0 +1,2 @@
+git+https://github.com/akretion/locomotivecms-python-client@master#egg=locomotivecms
+git+https://github.com/cheah/adyen-cse-python@master#egg=adyen-cse-python

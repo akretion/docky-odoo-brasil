@@ -1,5 +1,5 @@
 
-./odoo:
+../src:
     modules: []
     src: https://github.com/OCA/ocb 10.0
 
