@@ -1,37 +1,33 @@
 networks:
   default:
     external:
-      name: vd
+      name: dy
 services:
   db:
     environment:
-    - POSTGRES_USER=odoo
-    - POSTGRES_DB=db
+      - POSTGRES_USER=odoo
+      - POSTGRES_DB=db
     image: quay.io/akretion/postgresql:10
     volumes:
-      - .db/data/:/var/lib/postgresql/data
+      - .db/:/var/lib/postgresql/data
   odoo:
     build: odoo
     environment:
       - PYTHONDONTWRITEBYTECODE=True
-      - LOCAL_USER_ID=1000
-      - VIRTUAL_HOST=shopinvader-docky.vd
-      - VIRTUAL_PORT=8069
-      - MAINTAINER_QUALITY_TOOLS=/home/${USER}/.docky/shared/maintainer_quality_tools
+      - LOCAL_USER_ID=$UID
       - DB_USER=odoo
       - DB_PASS=odoo
       - DB_NAME=db
       - RUNNING_ENV=dev
       - MARABUNTA_MODE=demo
-      - LOG_HANDLER=:WARN
-      - ADDONS_PATH=/opt/odoo/src/addons
-      - OPENERP_SERVER=/opt/etc/odoo.cfg
+      - VIRTUAL_HOST=shopinvader-docky.dy
+      - VIRTUAL_PORT=8069
     links:
       - db
     networks:
       default:
         aliases:
-        - shopinvader-docky.vd
+          - shopinvader-docky.dy
     volumes:
       - ./odoo:/opt/odoo
 version: '3'
