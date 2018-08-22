@@ -22,6 +22,8 @@ services:
       - MARABUNTA_MODE=demo
       - VIRTUAL_HOST=shopinvader-docky.dy
       - VIRTUAL_PORT=8069
+      - DEMO=True
+      - ADDONS_PATH=/opt/odoo/local-src,/opt/odoo/src/addons,/opt/odoo/links,/opt/odoo/external-src/web,/opt/odoo/external-src/bank-payment,/opt/odoo/external-src/account-fiscal-rule,/opt/odoo/external-src/reporting-engine,/opt/odoo/external-src/l10n-brazil,/opt/odoo/external-src/server-tools
     links:
       - db
     networks:
