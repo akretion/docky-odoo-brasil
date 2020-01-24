@@ -1,0 +1,8 @@
+migration:
+  options:
+    install_command: odoo
+  versions:
+    - version: 2020.01.31
+      addons:
+        upgrade:
+          - l10n_br_base

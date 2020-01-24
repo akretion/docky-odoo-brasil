@@ -1,0 +1,34 @@
+odoo:
+  remotes:
+    origin: https://github.com/oca/ocb
+  merges:
+    - origin 12.0
+
+account-payment:
+    modules: []
+    src: https://github.com/oca/account-payment 12.0
+
+bank-payment:
+    modules: []
+    src: https://github.com/oca/bank-payment 12.0
+
+currency:
+    modules: []
+    src: https://github.com/oca/currency 12.0
+
+server-tools:
+    modules: []
+    src: https://github.com/oca/server-tools 12.0
+
+server-env:
+    modules: ['server_environment']
+    src: https://github.com/oca/server-env 12.0
+
+l10n-brazil:
+    src: https://github.com/OCA/l10n-brazil 12.0
+    remotes:
+        akretion: https://github.com/akretion/l10n-brazil.git
+    merges:
+      -
+          remote: akretion
+          ref: 12.0-mig-l10n_br_account_product
