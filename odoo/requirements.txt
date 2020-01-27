@@ -1,4 +1,11 @@
-num2words==0.5.4
-pycep-correios
-erpbrasil.base==1.1.0
-workalendar==7.1.1
+unidecode
+num2words
+pillow==5.2.0
+ofxparse==0.16
+suds-jurko-requests
+xmlsec
+lxml==4.2.3
+pycep_correios
+erpbrasil.base
+git+https://github.com/akretion/erpbrasil.assinatura.git@certificado-property
+pudb
