@@ -1,43 +1,35 @@
+version: "3.7"
 networks:
-  default:
-    external:
-      name: dy
+  local:
+  traefik:
+    external: true
 services:
   db:
     environment:
-      - POSTGRES_USER=odoo
-      - POSTGRES_DB=db
-    image: postgres:12
+      - POSTGRES_USER=$PGUSER
+      - POSTGRES_DB=$PGDATABASE
+    image: postgres:10
     volumes:
       - .db/:/var/lib/postgresql/data
+    networks:
+      - local
   odoo:
     build: odoo
     environment:
-      - PYTHONDONTWRITEBYTECODE=True
-      - LOCAL_USER_ID=$UID
-      - DB_USER=odoo
-      - DB_PASS=odoo
-      - DB_NAME=False
-      - DB_HOST=db
-      - DB_FILTER=False
-      - LIST_DB=True
-      - RUNNING_ENV=dev
-      - MARABUNTA_MODE=demo
-      - VIRTUAL_HOST=odoo-brasil.dy
-      - VIRTUAL_PORT=8069
       - DEMO=True
-      - SERVER_WIDE_MODULES=web
+      - MARABUNTA_MODE=demo
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.rule=Host(`${COMPOSE_PROJECT_NAME}.localhost`)"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-long.rule=Host(`${COMPOSE_PROJECT_NAME}.localhost`) && PathPrefix(`/longpolling/`)"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.service=${COMPOSE_PROJECT_NAME}odoo"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-long.service=${COMPOSE_PROJECT_NAME}odoo_long"
+      - "traefik.http.services.${COMPOSE_PROJECT_NAME}odoo.loadbalancer.server.port=8069"
+      - "traefik.http.services.${COMPOSE_PROJECT_NAME}odoo_long.loadbalancer.server.port=8072"
+      - "docky.access.help=${COMPOSE_PROJECT_NAME}.localhost"
     links:
       - db
-    ports:
-      - 8069:8069
     networks:
-      default:
-        aliases:
-          - odoo-brasil.dy
-    volumes:
-      - ./odoo:/odoo
-      - ./data/addons:/data/odoo/addons
-      - ./data/filestore:/data/odoo/filestore
-      - ./data/sessions:/data/odoo/sessions
-version: '3'
+      - local
+      - traefik
