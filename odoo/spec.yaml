@@ -26,9 +26,3 @@ server-env:
 
 l10n-brazil:
     src: https://github.com/OCA/l10n-brazil 12.0
-    remotes:
-        akretion: https://github.com/akretion/l10n-brazil.git
-    merges:
-      -
-          remote: akretion
-          ref: 12.0-mig-l10n_br_account_product
