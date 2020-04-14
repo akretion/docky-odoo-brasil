@@ -1,7 +1,7 @@
 ## Ambiente Docker Compose para desenvolvimento de Odoo no Brasil
 
 ```
-sudo pip install git+https://github.com/akretion/ak.git@v2
+sudo pip install git+https://github.com/akretion/ak.git
 sudo pip install --upgrade docky
 git clone https://github.com/akretion/odoo-brasil-docky.git
 cd docky-odoo-brasil/odoo
