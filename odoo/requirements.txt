@@ -7,5 +7,4 @@ xmlsec
 lxml==4.2.3
 pycep_correios
 erpbrasil.base
-git+https://github.com/akretion/erpbrasil.assinatura.git@certificado-property
-pudb
+erpbrasil.assinatura==0.4.2

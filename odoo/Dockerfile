@@ -2,7 +2,7 @@
 FROM camptocamp/odoo-project:12.0-latest
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends vim wget git libxmlsec1-dev build-essential python3-dev
+    && apt-get install -y --no-install-recommends vim wget git libxmlsec1-dev build-essential python3-dev locales
 
 RUN apt-get install swig3.0
 RUN ln -s /usr/bin/swig3.0 /usr/bin/swig
@@ -22,3 +22,9 @@ COPY ./setup.py /odoo/setup.py
 COPY ./songs /odoo/songs
 COPY ./migration.yml /odoo/migration.yml
 COPY ./links /odoo/links
+
+RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+    dpkg-reconfigure --frontend=noninteractive locales && \
+    update-locale LANG=en_US.UTF-8
+
+ENV LANG en_US.UTF-8
