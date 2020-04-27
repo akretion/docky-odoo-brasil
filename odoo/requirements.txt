@@ -1,6 +1,6 @@
 unidecode
 num2words
-pillow==5.2.0
+pillow==7.1.2
 ofxparse==0.16
 suds-jurko-requests
 xmlsec
