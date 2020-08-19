@@ -33,7 +33,7 @@ server-ux:
 
 stock-logistics-workflow:
     modules: []
-    src: https://github.com/OCA/stock-logistics-workflow
+    src: https://github.com/OCA/stock-logistics-workflow 12.0
 
 l10n-brazil:
     src: https://github.com/OCA/l10n-brazil 12.0
