@@ -8,7 +8,7 @@ services:
     environment:
       - POSTGRES_USER=$PGUSER
       - POSTGRES_DB=$PGDATABASE
-    image: postgres:10
+    image: quay.io/akretion/postgresql:10
     volumes:
       - .db/:/var/lib/postgresql/data
     networks:
@@ -18,6 +18,8 @@ services:
     environment:
       - DEMO=True
       - MARABUNTA_MODE=demo
+      # you can specify your own addons path, if you don't want to use links
+      # - ADDONS_PATH=/odoo/links,/odoo/local-src,/odoo/src/odoo/addons,/odoo/src/addons,/odoo/external-src/server-tools
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik"

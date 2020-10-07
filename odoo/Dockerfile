@@ -7,8 +7,6 @@ RUN apt-get update \
 RUN apt-get install swig3.0
 RUN ln -s /usr/bin/swig3.0 /usr/bin/swig
 
-RUN pip install --upgrade pip
-
 COPY ./src /odoo/src
 RUN pip install -e /odoo/src
 
