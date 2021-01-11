@@ -7,7 +7,7 @@ lxml==4.6.2
 pyopenssl==18.0.0
 signxml
 cryptography
-pillow==5.2.0
+pillow==7.1.0
 ofxparse==0.16
 suds-jurko-requests
 xmlsec
