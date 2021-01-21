@@ -2,37 +2,37 @@ odoo:
   remotes:
     origin: https://github.com/oca/ocb
   merges:
-    - origin 12.0
+    - origin 14.0
 
 account-payment:
-    src: https://github.com/oca/account-payment 12.0
+    src: https://github.com/oca/account-payment 14.0
 
 account-invoicing:
-    src: https://github.com/oca/account-invoicing 12.0
+    src: https://github.com/oca/account-invoicing 14.0
 
 bank-payment:
-    src: https://github.com/oca/bank-payment 12.0
+    src: https://github.com/oca/bank-payment 14.0
 
 currency:
-    src: https://github.com/oca/currency 12.0
+    src: https://github.com/oca/currency 14.0
 
 server-tools:
-    src: https://github.com/oca/server-tools 12.0
+    src: https://github.com/oca/server-tools 14.0
 
 server-env:
-    src: https://github.com/oca/server-env 12.0
+    src: https://github.com/oca/server-env 14.0
 
 server-ux:
-    src: https://github.com/oca/server-ux 12.0
+    src: https://github.com/oca/server-ux 14.0
 
 stock-logistics-workflow:
-    src: https://github.com/OCA/stock-logistics-workflow 12.0
+    src: https://github.com/OCA/stock-logistics-workflow 14.0
 
 l10n-brazil:
-    src: https://github.com/OCA/l10n-brazil 12.0
+    src: https://github.com/OCA/l10n-brazil 14.0
 
 account-financial-reporting:
-    src: https://github.com/OCA/account-financial-reporting 12.0
+    src: https://github.com/OCA/account-financial-reporting 14.0
 
 reporting-engine:
-    src: https://github.com/OCA/reporting-engine 12.0
+    src: https://github.com/OCA/reporting-engine 14.0
