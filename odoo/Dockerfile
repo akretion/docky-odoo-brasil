@@ -1,5 +1,5 @@
 # https://hub.docker.com/r/camptocamp/odoo-project
-FROM camptocamp/odoo-project:12.0-buster-latest
+FROM camptocamp/odoo-project:14.0-latest
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends vim wget libxmlsec1-dev build-essential python3-dev git locales libreoffice
