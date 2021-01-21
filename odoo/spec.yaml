@@ -5,34 +5,27 @@ odoo:
     - origin 12.0
 
 account-payment:
-    modules: []
     src: https://github.com/oca/account-payment 12.0
 
 account-invoicing:
-    modules: []
     src: https://github.com/oca/account-invoicing 12.0
 
 bank-payment:
-    modules: []
     src: https://github.com/oca/bank-payment 12.0
 
 currency:
-    modules: []
     src: https://github.com/oca/currency 12.0
 
 server-tools:
-    modules: []
     src: https://github.com/oca/server-tools 12.0
 
 server-env:
-    modules: ['server_environment']
     src: https://github.com/oca/server-env 12.0
 
 server-ux:
     src: https://github.com/oca/server-ux 12.0
 
 stock-logistics-workflow:
-    modules: []
     src: https://github.com/OCA/stock-logistics-workflow 12.0
 
 l10n-brazil:
