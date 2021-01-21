@@ -1,11 +1,17 @@
 # https://hub.docker.com/r/camptocamp/odoo-project
-FROM camptocamp/odoo-project:12.0-latest
+FROM camptocamp/odoo-project:12.0-buster-latest
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends vim wget git libxmlsec1-dev build-essential python3-dev locales
+    && apt-get install -y --no-install-recommends vim wget libxmlsec1-dev build-essential python3-dev git locales libreoffice
 
 RUN apt-get install swig3.0
 RUN ln -s /usr/bin/swig3.0 /usr/bin/swig
+
+RUN pip install --upgrade pip
+
+RUN sed -i -e 's/# pt_BR.UTF-8 UTF-8/pt_BR.UTF-8 UTF-8/' /etc/locale.gen \
+    && dpkg-reconfigure --frontend=noninteractive locales \
+    && update-locale LANG=pt_BR.UTF-8
 
 COPY ./src /odoo/src
 RUN pip install -e /odoo/src
@@ -20,9 +26,5 @@ COPY ./setup.py /odoo/setup.py
 COPY ./songs /odoo/songs
 COPY ./migration.yml /odoo/migration.yml
 COPY ./links /odoo/links
-
-RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
-    dpkg-reconfigure --frontend=noninteractive locales && \
-    update-locale LANG=en_US.UTF-8
-
-ENV LANG en_US.UTF-8
+RUN pip install -e /odoo
+COPY ./templates /templates
