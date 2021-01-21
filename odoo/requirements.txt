@@ -1,26 +1,28 @@
 unidecode
 num2words==0.5.4
-pycep-correios
-erpbrasil.base==1.2.0
+pycep-correios==5.0.0
+erpbrasil.base==2.0.0
+-e git://github.com/erpbrasil/nfelib.git#egg=nfelib
+erpbrasil.assinatura==1.0.2
+erpbrasil.transmissao==1.0.0
+erpbrasil.edoc==1.0.0
+erpbrasil.edoc.pdf==0.1.1
 workalendar==7.1.1
 lxml==4.6.2
-pyopenssl==18.0.0
+pyopenssl==19.1.0
 signxml
 cryptography
 pillow==7.1.0
 ofxparse==0.16
 suds-jurko-requests
-xmlsec
 xmldiff
 pudb
--e git://github.com/akretion/erpbrasil.assinatura.git#egg=erpbrasil.assinatura
--e git://github.com/erpbrasil/erpbrasil.transmissao.git#egg=erpbrasil.transmissao
--e git://github.com/erpbrasil/nfelib.git#egg=nfelib
--e git://github.com/erpbrasil/erpbrasil.edoc.git#egg=erpbrasil.edoc
--e git://github.com/erpbrasil/erpbrasil.edoc.pdf.git#egg=erpbrasil.edoc.pdf
 anytree
 pyexcel
 pyexcel-xls
 pyexcel-xlsx
 py3o.template
 py3o.formats
+cachetools>=2.0.1
+chardet
+git+https://github.com/OCA/openupgradelib.git@master
