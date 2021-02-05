@@ -16,6 +16,9 @@ bank-payment:
 currency:
     src: https://github.com/oca/currency 12.0
 
+contract:
+    src: https://github.com/OCA/contract 12.0
+
 server-tools:
     src: https://github.com/oca/server-tools 12.0
 
@@ -36,3 +39,6 @@ account-financial-reporting:
 
 reporting-engine:
     src: https://github.com/OCA/reporting-engine 12.0
+
+mis-builder:
+    src: https://github.com/OCA/mis-builder.git 12.0

@@ -7,6 +7,8 @@ erpbrasil.assinatura==1.0.2
 erpbrasil.transmissao==1.0.0
 erpbrasil.edoc==1.0.0
 erpbrasil.edoc.pdf==0.1.1
+nfselib.ginfes==0.2.0
+nfselib.issnet==0.2.0
 workalendar==7.1.1
 lxml==4.6.2
 pyopenssl==19.1.0
@@ -26,3 +28,4 @@ py3o.formats
 cachetools>=2.0.1
 chardet
 git+https://github.com/OCA/openupgradelib.git@master
+vcrpy
