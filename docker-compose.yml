@@ -19,10 +19,10 @@ services:
       docky.main.service: true
       docky.user: odoo
     volumes:
-      - ./odoo:/odoo
-      - ./data/addons:/data/odoo/addons
-      - ./data/filestore:/data/odoo/filestore
-      - ./data/sessions:/data/odoo/sessions
+      - ./odoo:/odoo:cached
+      - ./data/addons:/data/odoo/addons:cached
+      - ./data/filestore:/data/odoo/filestore:cached
+      - ./data/sessions:/data/odoo/sessions:cached
 version: '3.7'
 volumes:
   py3o_tmp: null
