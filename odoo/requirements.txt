@@ -10,7 +10,7 @@ erpbrasil.edoc.pdf==0.1.1
 nfselib.ginfes==0.2.0
 nfselib.issnet==0.2.0
 workalendar==7.1.1
-lxml==4.6.2
+lxml==4.6.3
 pyopenssl==19.1.0
 signxml
 cryptography
