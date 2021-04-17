@@ -13,7 +13,7 @@ services:
       - PGDATABASE=$PGDATABASE
       - PGUSER=$PGUSER
       - PGPASSWORD=$PGPASSWORD
-      - ADDONS_PATH=/odoo/links,/odoo/local-src,/odoo/src/odoo/addons,/odoo/src/addons,/odoo/external-src/account-payment,/odoo/external-src/bank-payment,/odoo/external-src/currency,/odoo/external-src/server-tools,/odoo/external-src/l10n-brazil,/odoo/external-src/account-financial-reporting,/odoo/external-src/server-ux,/odoo/external-src/reporting-engine,/odoo/external-src/account-invoicing,/odoo/external-src/stock-logistics-workflow,/odoo/external-src/mis-builder,/odoo/external-src/contract
+      - ADDONS_PATH=/odoo/links,/odoo/local-src,/odoo/src/odoo/addons,/odoo/src/addons,/odoo/external-src/account-payment,/odoo/external-src/account-invoicing,/odoo/external-src/bank-payment,/odoo/external-src/currency,/odoo/external-src/contract,/odoo/external-src/server-tools,/odoo/external-src/server-env,/odoo/external-src/server-ux,/odoo/external-src/stock-logistics-workflow,/odoo/external-src/l10n-brazil,/odoo/external-src/account-financial-reporting,/odoo/external-src/reporting-engine,/odoo/external-src/mis-builder
     hostname: ${ENV}-${COMPOSE_PROJECT_NAME}
     labels:
       docky.main.service: true
