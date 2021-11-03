@@ -1,11 +1,11 @@
 unidecode
 num2words==0.5.4
 pycep-correios==5.0.0
-erpbrasil.base==2.0.0
+erpbrasil.base==2.2.2
 -e git://github.com/erpbrasil/nfelib.git#egg=nfelib
-erpbrasil.assinatura==1.0.2
+erpbrasil.assinatura==1.2.0
 erpbrasil.transmissao==1.0.0
-erpbrasil.edoc==1.0.0
+erpbrasil.edoc==2.2.1
 erpbrasil.edoc.pdf==0.1.1
 nfselib.ginfes==0.2.0
 nfselib.issnet==0.2.0
