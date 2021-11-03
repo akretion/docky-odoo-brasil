@@ -32,7 +32,11 @@ stock-logistics-workflow:
     src: https://github.com/OCA/stock-logistics-workflow 14.0
 
 l10n-brazil:
-    src: https://github.com/OCA/l10n-brazil 14.0
+    remotes:
+      oca: https://github.com/oca/l10n-brazil
+      akretion: https://github.com/akretion/l10n-brazil
+    merges:
+        - oca 14.0
 
 account-financial-reporting:
     src: https://github.com/OCA/account-financial-reporting 14.0
