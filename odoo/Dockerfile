@@ -2,7 +2,7 @@
 FROM camptocamp/odoo-project:12.0-buster-latest
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends vim wget libxmlsec1-dev build-essential python3-dev git locales libreoffice
+    && apt-get install -y --no-install-recommends vim wget libxmlsec1-dev build-essential python3-dev git locales libreoffice pkg-config
 
 RUN apt-get install swig3.0
 RUN ln -s /usr/bin/swig3.0 /usr/bin/swig
