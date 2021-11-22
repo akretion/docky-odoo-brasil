@@ -1,14 +1,15 @@
 unidecode
 num2words==0.5.4
 pycep-correios==5.0.0
-erpbrasil.base==2.1.0
--e git://github.com/erpbrasil/nfelib.git#egg=nfelib
-erpbrasil.assinatura==1.0.2
+nfelib==1.2.0
+erpbrasil.base==2.2.2
+erpbrasil.assinatura==1.2.0
 erpbrasil.transmissao==1.0.0
-erpbrasil.edoc==2.0.1
-erpbrasil.edoc.pdf==0.1.1
+erpbrasil.edoc==2.2.1
++erpbrasil.edoc.pdf==1.0.2
 nfselib.ginfes==0.2.0
 nfselib.issnet==0.2.0
+nfselib.paulistana==0.2.0
 workalendar==7.1.1
 lxml==4.6.3
 pyopenssl==19.1.0
@@ -29,3 +30,4 @@ cachetools>=2.0.1
 chardet
 git+https://github.com/OCA/openupgradelib.git@master
 vcrpy
+odoo_test_helper
