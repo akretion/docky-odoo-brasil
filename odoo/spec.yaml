@@ -10,6 +10,9 @@ account-payment:
 account-invoicing:
     src: https://github.com/oca/account-invoicing 12.0
 
+account-reconcile:
+    src: https://github.com/OCA/account-reconcile 12.0
+
 bank-payment:
     src: https://github.com/oca/bank-payment 12.0
 
@@ -18,6 +21,9 @@ currency:
 
 contract:
     src: https://github.com/OCA/contract 12.0
+
+delivery-carrier:
+    src: https://github.com/OCA/delivery-carrier 12.0
 
 server-tools:
     src: https://github.com/oca/server-tools 12.0
@@ -34,6 +40,9 @@ stock-logistics-workflow:
 l10n-brazil:
     src: https://github.com/OCA/l10n-brazil 12.0
 
+manufacture:
+    src: https://github.com/OCA/manufacture 12.0
+
 account-financial-reporting:
     src: https://github.com/OCA/account-financial-reporting 12.0
 
@@ -42,3 +51,6 @@ reporting-engine:
 
 mis-builder:
     src: https://github.com/OCA/mis-builder.git 12.0
+
+web:
+    src: https://github.com/OCA/web.git 12.0
