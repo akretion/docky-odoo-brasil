@@ -5,8 +5,9 @@ nfelib==1.2.0
 erpbrasil.base==2.2.2
 erpbrasil.assinatura==1.2.0
 erpbrasil.transmissao==1.0.0
-erpbrasil.edoc==2.2.1
-+erpbrasil.edoc.pdf==1.0.2
+-e git+https://github.com/akretion/erpbrasil.edoc.git@master-schema2#egg=erpbrasil.edoc
+-e git://github.com/erpbrasil/febraban-python.git@v0.7.1#egg=febraban
+erpbrasil.edoc.pdf==1.0.2
 nfselib.ginfes==0.2.0
 nfselib.issnet==0.2.0
 nfselib.paulistana==0.2.0
