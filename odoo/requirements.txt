@@ -12,7 +12,7 @@ nfselib.ginfes==0.2.0
 nfselib.issnet==0.2.0
 nfselib.paulistana==0.2.0
 workalendar==7.1.1
-lxml==4.6.5
+lxml==4.9.1
 pyopenssl==19.1.0
 signxml
 cryptography
