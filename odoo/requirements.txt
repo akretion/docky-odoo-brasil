@@ -16,7 +16,7 @@ lxml==4.6.5
 pyopenssl==19.1.0
 signxml
 cryptography
-pillow==8.3.2
+pillow==9.3.0
 ofxparse==0.16
 suds-jurko-requests
 xmldiff
