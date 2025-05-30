@@ -1,22 +1,31 @@
+# Dependencias da Localização
+# https://github.com/OCA/l10n-brazil/blob/16.0/requirements.txt
+brazilcep
+brazilfiscalreport
+email-validator
+# erpbrasil.assinatura>=1.7.0
+git+https://github.com/erpbrasil/erpbrasil.assinatura
+erpbrasil.base>=2.3.0
+erpbrasil.edoc>=2.5.2
+erpbrasil.transmissao>=1.1.0
+nfelib<=2.0.7
+num2words
+phonenumbers
+pyyaml
 unidecode
-num2words==0.5.4
-pycep-correios==5.0.0
-erpbrasil.base==2.2.2
--e git://github.com/erpbrasil/nfelib.git#egg=nfelib
-erpbrasil.assinatura==1.2.0
-erpbrasil.transmissao==1.0.0
-erpbrasil.edoc==2.2.1
-erpbrasil.edoc.pdf==0.1.1
-nfselib.ginfes==0.2.0
-nfselib.issnet==0.2.0
-workalendar==7.1.1
-lxml==4.6.3
-pyopenssl==19.1.0
+workalendar
+
+# nfselib.barueri
+# nfselib.ginfes
+# nfselib.paulistana
+git+https://github.com/OCA/openupgradelib
+# satcomum
+# odoo_test_helper
 signxml
 cryptography
-pillow==8.3.2
+
+pillow
 ofxparse==0.16
-suds-jurko-requests
 xmldiff
 pudb
 anytree
@@ -27,5 +36,23 @@ py3o.template
 py3o.formats
 cachetools>=2.0.1
 chardet
-git+https://github.com/OCA/openupgradelib.git@master
+# Error
+# git+https://github.com/OCA/openupgradelib.git@master
 vcrpy
+websocket-client
+phonenumbers
+faker
+astor
+coverage
+
+# ALPINE
+html_clean
+lxml_html_clean
+
+# Erros ao Rodar os Testes ( Faltou no requirements do Odoo? )
+
+# ERROR odoo odoo.addons.base.tests.test_qweb: ERROR: TestQWebBasic.test_render_barcode
+# Traceback (most recent call last):
+#   File "/usr/local/lib/python3.11/site-packages/reportlab/graphics/renderPM.py", line 47, in _getPMBackend
+#    import rlPyCairo as M
+rlPyCairo
