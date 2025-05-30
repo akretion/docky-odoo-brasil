@@ -2,47 +2,105 @@ odoo:
   remotes:
     origin: https://github.com/oca/ocb
   merges:
-    - origin 14.0
+    - origin 16.0
 
-account-payment:
-    src: https://github.com/oca/account-payment 14.0
+account-financial-reporting:
+    src: https://github.com/OCA/account-financial-reporting 16.0
+
+account-financial-tools:
+    src: https://github.com/OCA/account-financial-tools 16.0
 
 account-invoicing:
-    src: https://github.com/oca/account-invoicing 14.0
+    src: https://github.com/oca/account-invoicing 16.0
+
+account-payment:
+    src: https://github.com/oca/account-payment 16.0
 
 bank-payment:
-    src: https://github.com/oca/bank-payment 14.0
+    src: https://github.com/oca/bank-payment 16.0
 
-currency:
-    src: https://github.com/oca/currency 14.0
+brand:
+    src: https://github.com/OCA/brand 16.0
+
+commission:
+    src: https://github.com/OCA/commission 16.0
 
 contract:
-    src: https://github.com/OCA/contract 14.0
+    src: https://github.com/OCA/contract 16.0
 
-server-tools:
-    src: https://github.com/oca/server-tools 14.0
+currency:
+    src: https://github.com/oca/currency 16.0
 
-server-env:
-    src: https://github.com/oca/server-env 14.0
+delivery-carrier:
+    src: https://github.com/OCA/delivery-carrier 16.0
 
-server-ux:
-    src: https://github.com/oca/server-ux 14.0
-
-stock-logistics-workflow:
-    src: https://github.com/OCA/stock-logistics-workflow 14.0
+hr:
+    src: https://github.com/OCA/hr 16.0
 
 l10n-brazil:
     remotes:
       oca: https://github.com/oca/l10n-brazil
       akretion: https://github.com/akretion/l10n-brazil
     merges:
-        - oca 14.0
+        - oca 16.0
 
-account-financial-reporting:
-    src: https://github.com/OCA/account-financial-reporting 14.0
+server-tools:
+    src: https://github.com/oca/server-tools 16.0
 
-reporting-engine:
-    src: https://github.com/OCA/reporting-engine 14.0
+server-env:
+    src: https://github.com/oca/server-env 16.0
+
+server-ux:
+    src: https://github.com/oca/server-ux 16.0
+
+stock-logistics-workflow:
+    src: https://github.com/OCA/stock-logistics-workflow 16.0
+
+l10n-brazil:
+    remotes:
+      oca: https://github.com/oca/l10n-brazil
+      akretion: https://github.com/akretion/l10n-brazil
+    merges:
+        - oca 16.0
 
 mis-builder:
-    src: https://github.com/OCA/mis-builder.git 14.0
+    src: https://github.com/OCA/mis-builder.git 16.0
+
+partner-contact:
+    src: https://github.com/OCA/partner-contact 16.0
+
+product-attribute:
+    src: https://github.com/OCA/product-attribute 16.0
+
+purchase-workflow:
+    src: https://github.com/OCA/purchase-workflow 16.0
+
+queue:
+    src: https://github.com/oca/queue 16.0
+
+reporting-engine:
+    src: https://github.com/OCA/reporting-engine 16.0
+
+sale-workflow:
+    src: https://github.com/OCA/sale-workflow 16.0
+
+server-backend:
+    src: https://github.com/OCA/server-backend 16.0
+
+server-env:
+    src: https://github.com/oca/server-env 16.0
+
+server-tools:
+    src: https://github.com/oca/server-tools 16.0
+
+server-ux:
+    src: https://github.com/oca/server-ux 16.0
+
+social:
+    src: https://github.com/OCA/social 16.0
+
+stock-logistics-workflow:
+    src: https://github.com/OCA/stock-logistics-workflow 16.0
+
+web:
+    src: https://github.com/OCA/web 16.0
