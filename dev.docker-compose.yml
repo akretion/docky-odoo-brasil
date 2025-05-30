@@ -1,38 +1,78 @@
-version: "3.7"
 networks:
-  local:
   traefik:
     external: true
+  local:
 services:
   db:
+    image: postgres:13
     environment:
       - POSTGRES_USER=$PGUSER
-      - POSTGRES_PASSWORD=$PGPASSWORD
       - POSTGRES_DB=$PGDATABASE
-    image: postgres:13
+      - POSTGRES_PASSWORD=$PGPASSWORD
     volumes:
       - .db/:/var/lib/postgresql/data
     networks:
       - local
+  boleto_cnab_api:
+    image: ghcr.io/akretion/boleto_cnab_api:latest
+    networks:
+      - local
   odoo:
-    build: odoo
+    build:
+      context: odoo
+      target: dev
     environment:
-      - DEMO=True
-      - MARABUNTA_MODE=demo
-      # you can specify your own addons path, if you don't want to use links
-      # - ADDONS_PATH=/odoo/links,/odoo/local-src,/odoo/src/odoo/addons,/odoo/src/addons,/odoo/external-src/server-tools
+      PYTHONDONTWRITEBYTECODE: "True"
+      PGDATABASE: $PGDATABASE
+      PGHOST: $PGHOST
+      PGPASSWORD: $PGPASSWORD
+      PGUSER: $PGUSER
+      LIST_DB: "True"
+      DB_FILTER: .*
+      DEMO: "True"
+      WORKERS: $WORKERS
+      ODOO_REPORT_URL: http://odoo:8069
+      KWKHTMLTOPDF_SERVER_URL: http://localhost:8080
+      DB_SSLMODE: $DB_SSLMODE
+      ADDITIONAl_ODOO_RC: $ADDITIONAL_ODOO_RC
+      DB_MAXCONN: $DB_MAXCONN
+      LOG_LEVEL: $LOG_LEVEL
+      MAX_CRON_THREADS: $MAX_CRON_THREADS
+      ADDONS_PATH: $ADDONS_PATH
+      BRCOBRANCA_API_URL: http://boleto_cnab_api:9292
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik"
       - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.rule=Host(`${COMPOSE_PROJECT_NAME}.localhost`)"
-      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-long.rule=Host(`${COMPOSE_PROJECT_NAME}.localhost`) && PathPrefix(`/longpolling/`)"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-long.rule=Host(`${COMPOSE_PROJECT_NAME}.localhost`)
+        && PathPrefix(`/longpolling/`)"
       - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.service=${COMPOSE_PROJECT_NAME}odoo"
       - "traefik.http.routers.${COMPOSE_PROJECT_NAME}-long.service=${COMPOSE_PROJECT_NAME}odoo_long"
       - "traefik.http.services.${COMPOSE_PROJECT_NAME}odoo.loadbalancer.server.port=8069"
       - "traefik.http.services.${COMPOSE_PROJECT_NAME}odoo_long.loadbalancer.server.port=8072"
-      - "docky.help=${COMPOSE_PROJECT_NAME}.localhost"
+      - "traefik.http.middlewares.${COMPOSE_PROJECT_NAME}corsHeader.headers.accessControlAllowMethods=
+        GET,POST,OPTIONS,PUT"
+      - "traefik.http.middlewares.${COMPOSE_PROJECT_NAME}corsHeader.headers.accessControlAllowOriginList=*"
+      - "traefik.http.middlewares.${COMPOSE_PROJECT_NAME}corsHeader.headers.accessControlAllowHeaders=DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,api-key,partner-email,authorization,sess-cart-id,website-unique-key"
+      - "traefik.http.middlewares.${COMPOSE_PROJECT_NAME}corsHeader.headers.accessControlExposeHeaders=Content-Length,Content-Range"
+      - "traefik.http.middlewares.${COMPOSE_PROJECT_NAME}corsHeader.headers.addVaryHeader=true"
+      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.middlewares=${COMPOSE_PROJECT_NAME}corsHeader"
+      - "docky.help=http://${COMPOSE_PROJECT_NAME}.localhost"
     links:
       - db
+      - boleto_cnab_api
+      # - kwkhtmltopdf
     networks:
       - local
       - traefik
+    ports:
+      - 8069:8069
+    volumes:
+      - ./odoo/:/home/odoo/app:r
+      - ./data/filestore:/home/odoo/.local/share/Odoo/filestore:rw
+      - ./data/sessions:/home/odoo/.local/share/Odoo/sessions:rw
+      #- ./.home:/home/odoo # This directory is used for keeping the bash/psql history
+  # kwkhtmltopdf:
+  #  image: acsone/kwkhtmltopdf
+  #  networks:
+  #    - local
